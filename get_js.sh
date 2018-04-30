@@ -11,6 +11,7 @@ wget https://github.com/mrdoob/three.js/archive/r91.tar.gz
 tar zxf r91.tar.gz
 
 cp three.js-r91/build/three.js three.js
+cp three.js-r91/examples/js/controls/OrbitControls.js controls.js
 # could be three.min.js or three.module.js
 
 rm -rf three.js-r91 r91.tar.gz
