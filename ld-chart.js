@@ -63,15 +63,17 @@ function add_observations(chart, chrom_observations) {
     const dz = 9 / chart.chrom_size
     for (var chrom_pos of chrom_observations) {
         const obs_geom = new THREE.Geometry()
+	const start = chart.chrom_observations[chrom_pos]
+	const end = chrom_observations[chrom_pos]	
         obs_geom.vertices.push(
 	    new THREE.Vector3(
-		dx*chart.generation,
-		XX,
-		dz * chrom_pos),
+                dx*chart.generation,
+                start*dy,
+                dz * chrom_pos),
 	    new THREE.Vector3(
-		dx*(chart.generation+1),
-		YY,
-		dz * chrom_pos))
+                dx*(chart.generation+1),
+                end*dy,
+                dz * chrom_pos))
         const obs_mat = new THREE.MeshBasicMaterial({color: 0xffffff})
         const obs_line = new THREE.Line(obs_geom, obs_mat)
         scene.add(obs_line)
