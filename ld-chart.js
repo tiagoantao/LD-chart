@@ -63,7 +63,7 @@ function add_observations(chart, chrom_observations) {
     const dz = 9 / chart.chrom_size
     for (var chrom_pos of chrom_observations) {
         const obs_geom = new THREE.Geometry()
-        const obs_geom.vertices.push(
+        obs_geom.vertices.push(
 	    new THREE.Vector3(
 		dx*chart.generation,
 		XX,
@@ -82,6 +82,6 @@ function add_observations(chart, chrom_observations) {
 
 
 const chart = chart_ld(window.innerWidth, window.innerHeight,
-		       10, -1, 1, {0: 1, 10: 0.5, 100: 0])
+		       10, -1, 1, {0: 1, 10: 0.5, 100: 0})
 
-add_observations(chart, {0: 1, 10: 0, 100: 1})
+//add_observations(chart, {0: 1, 10: 0, 100: 1})
